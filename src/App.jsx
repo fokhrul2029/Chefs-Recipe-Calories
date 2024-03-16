@@ -1,11 +1,16 @@
 import { Fragment } from "react";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Banner from "./components/Banner/Banner";
+import RecipeContent from "./components/RecipeContent/RecipeContent";
 
 function App() {
   return (
     <Fragment>
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl text-purple-500">Hello World</h1>
-      </div>
+      <Header></Header>
+      <Banner></Banner>
+      <RecipeContent></RecipeContent>
+      <Footer></Footer>
     </Fragment>
   );
 }
