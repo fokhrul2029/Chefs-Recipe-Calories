@@ -1,6 +1,6 @@
 function Header() {
   return (
-    <header className="py-7">
+    <div className="py-7">
       <nav className="container mx-auto px-4">
         <div className="navbar bg-base-100">
           <div className="navbar-start">
@@ -72,7 +72,7 @@ function Header() {
           </div>
         </div>
       </nav>
-    </header>
+    </div>
   );
 }
 

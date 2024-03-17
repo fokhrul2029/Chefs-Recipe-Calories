@@ -41,9 +41,10 @@ function RecipeContent() {
             Our Recipes
           </h1>
           <p className="max-w-4xl px-3 text-lightGray text-center mx-auto">
-            Lorem ipsum dolor sit amet consectetur. Proin et feugiat senectus
-            vulputate netus pharetra rhoncus. Eget urna volutpat curabitur
-            elementum mauris aenean neque.
+            Discover culinary delights with our recipes, crafted to tantalize
+            your taste buds and ignite your passion for cooking. From simple
+            classics to innovative creations, we offer a feast for every palate,
+            making every meal a memorable experience.
           </p>
         </div>
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 gap-4 py-6">
