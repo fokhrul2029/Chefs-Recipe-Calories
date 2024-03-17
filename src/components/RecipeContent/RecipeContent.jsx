@@ -4,6 +4,7 @@ import Cook from "../Cook/Cook";
 import Cooking from "../Cooking/Cooking";
 import Food from "../Food/Food";
 import Result from "../Result/Result";
+import { toast } from "react-toastify";
 
 function RecipeContent() {
   const [foods, setFoods] = useState([]);
@@ -23,7 +24,7 @@ function RecipeContent() {
     if (!isExist && !isExist2) {
       setCards((pre) => [...pre, data]);
     } else {
-      alert("Data already Exist!");
+      toast("Already Exist!");
     }
   };
 
