@@ -1,9 +1,37 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import { useState, useEffect } from "react";
 import Cook from "../Cook/Cook";
 import Cooking from "../Cooking/Cooking";
 import Food from "../Food/Food";
 import Result from "../Result/Result";
 
 function RecipeContent() {
+  const [foods, setFoods] = useState([]);
+  const [cards, setCards] = useState([]);
+  const [cookingItem, setCookingItem] = useState([]);
+
+  useEffect(() => {
+    fetch("/data.json")
+      .then((res) => res.json())
+      .then((data) => setFoods(data));
+  }, []);
+
+  const handleAddCards = (data) => {
+    const isExist = cards.find((item) => item.id == data.id);
+    const isExist2 = cookingItem.find((item) => item.id == data.id);
+
+    if (!isExist && !isExist2) {
+      setCards((pre) => [...pre, data]);
+    } else {
+      alert("Data already Exist!");
+    }
+  };
+
+  const handleCooking = (data) => {
+    setCards((pre) => pre.filter((item) => item.id !== data.id));
+    setCookingItem((pre) => [...pre, data]);
+  };
+
   return (
     <section className="py-10">
       <div className="container mx-auto px-4">
@@ -19,8 +47,9 @@ function RecipeContent() {
         </div>
         <div className="flex flex-col-reverse lg:grid lg:grid-cols-5 gap-4 py-6">
           <div className="col-span-3 grid lg:grid-cols-2 gap-6">
-            <Food></Food>
-            <Food></Food>
+            {foods.map((food) => (
+              <Food key={food.id} food={food} handleAddCards={handleAddCards} />
+            ))}
           </div>
 
           <div className="col-span-2">
@@ -29,7 +58,7 @@ function RecipeContent() {
               <div className="flex flex-col gap-4">
                 <div className="flex justify-center">
                   <h1 className="px-8 text-center border-b inline py-2 font-semibold text-2xl text-primaryGray">
-                    Want to cook: 01
+                    Want to cook: {cards.length}
                   </h1>
                 </div>
                 <div className="overflow-x-auto">
@@ -46,7 +75,14 @@ function RecipeContent() {
                     </thead>
                     <tbody>
                       {/* <!-- row 1 --> */}
-                      <Cook></Cook>
+                      {cards.map((item, i) => (
+                        <Cook
+                          handleCooking={handleCooking}
+                          item={item}
+                          index={i}
+                          key={i}
+                        />
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -55,7 +91,7 @@ function RecipeContent() {
               <div className="flex flex-col gap-4">
                 <div className="flex justify-center">
                   <h1 className="px-8 text-center border-b inline py-2 font-semibold text-2xl text-primaryGray">
-                    Currently cooking: 02
+                    Currently cooking: {cookingItem.length}
                   </h1>
                 </div>
                 <div className="overflow-x-auto">
@@ -71,9 +107,11 @@ function RecipeContent() {
                     </thead>
                     <tbody>
                       {/* <!-- row 1 --> */}
-                      <Cooking></Cooking>
+                      {cookingItem.map((item, i) => (
+                        <Cooking item={item} key={item.id} index={i} />
+                      ))}
                       {/* <!-- Result --> */}
-                      <Result></Result>
+                      <Result items={cookingItem} />
                     </tbody>
                   </table>
                 </div>

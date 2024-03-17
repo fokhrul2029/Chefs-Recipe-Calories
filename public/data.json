@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "title": "Chicken Stir Fry",
+    "img": "food-item 1.png",
+    "description": "A flavorful chicken stir-fry with mushrooms and basil leaves.",
+    "ingredients": [
+      "550 g chicken",
+      "120 ml soy sauce",
+      "200 g basil leaves",
+      "400 g mushrooms"
+    ],
+    "preparing_time": 30,
+    "calories": 320
+  },
+  {
+    "id": 2,
+    "title": "Vegetable Curry",
+    "img": "food-item-2.png",
+    "description": "A delicious vegetable curry with a blend of spices.",
+    "ingredients": [
+      "300 g mixed vegetables",
+      "150 g coconut milk",
+      "100 g curry paste",
+      "50 g tofu"
+    ],
+    "preparing_time": 45,
+    "calories": 250
+  },
+  {
+    "id": 3,
+    "title": "Pasta Carbonara",
+    "img": "food-item-2.png",
+    "description": "Classic pasta carbonara made with eggs, bacon, and parmesan cheese.",
+    "ingredients": [
+      "400 g spaghetti",
+      "150 g bacon",
+      "3 eggs",
+      "50 g grated parmesan cheese"
+    ],
+    "preparing_time": 25,
+    "calories": 450
+  },
+  {
+    "id": 4,
+    "title": "Mango Chicken Salad",
+    "img": "food-item 1.png",
+    "description": "A refreshing salad with grilled chicken and ripe mango slices.",
+    "ingredients": [
+      "400 g chicken breast",
+      "1 ripe mango",
+      "100 g mixed greens",
+      "50 g almonds"
+    ],
+    "preparing_time": 20,
+    "calories": 280
+  },
+  {
+    "id": 5,
+    "title": "Caprese Salad",
+    "img": "food-item 1.png",
+    "description": "A simple and elegant Italian salad with tomatoes, mozzarella, and basil.",
+    "ingredients": [
+      "300 g tomatoes",
+      "200 g fresh mozzarella",
+      "50 g fresh basil leaves",
+      "30 ml balsamic vinegar"
+    ],
+    "preparing_time": 15,
+    "calories": 200
+  },
+  {
+    "id": 6,
+    "title": "Chocolate Chip Cookies",
+    "img": "food-item-2.png",
+    "description": "Homemade chocolate chip cookies, perfect for a sweet treat.",
+    "ingredients": [
+      "200 g all-purpose flour",
+      "150 g butter",
+      "100 g chocolate chips",
+      "100 g brown sugar"
+    ],
+    "preparing_time": 40,
+    "calories": 150
+  }
+]
